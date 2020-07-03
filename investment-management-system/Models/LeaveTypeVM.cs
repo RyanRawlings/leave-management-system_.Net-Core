@@ -6,19 +6,14 @@ using System.Threading.Tasks;
 
 namespace investment_management_system.Models
 {
-
-    public class DetailsLeaveTypeVM
+    // Allows you to tone down or increase the amount of data exposed to the view
+    public class LeaveTypeVM
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public DateTime DateCreated { get; set; }
-    }
-
-    
-    // Allows you to tone down or increase the amount of data exposed to the view
-    public class CreateLeaveTypeVM
-    {
         [Required]
         public string Name { get; set; }
+        [Display(Name="Date Created")]
+        // Making the value nullable means that a value can be applied at any point rather then at runtime.
+        public DateTime? DateCreated { get; set; }
     }
 }

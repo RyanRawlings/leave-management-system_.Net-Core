@@ -56,6 +56,13 @@ namespace investment_management_system.Repository
 
         }
 
-
+        public bool isExists(int id)
+        {
+            // If no arguments are passed it will check whether any records exist within the object.
+            // The lambda variable will embody the objects within the collection
+            // Boolean check there are any objects within the specified collection that contains an Id property with a value equal to the id parameter
+            var isExists = _db.LeaveTypes.Any(q => q.Id == id);
+            return isExists;
+        }
     }
 }

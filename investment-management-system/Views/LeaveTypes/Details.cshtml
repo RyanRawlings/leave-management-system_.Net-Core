@@ -1,0 +1,39 @@
+﻿@model investment_management_system.Models.LeaveTypeVM
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <table class="table table-bordered" style="margin-top: 20px; table-layout: fixed; width: 30%; text-align: left; color: white;">
+        <colgroup>
+            <col style="background-color: #343a40; width: 40%">
+            <col style="width: 70%">
+        </colgroup>
+        <tr>
+            <td class="col-sm-2">
+                <!--Give me the name assigned to the object property-->
+                @Html.DisplayNameFor(model => model.Name)
+            </td>
+            <td class="col-sm-2" style="color: black !important;">
+                @Html.DisplayFor(model => model.Name)
+            </td>
+        </tr>
+        <tr>
+            <td class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DateCreated)
+                
+            </td>
+            <td class="col-sm-2" style="color: black !important;">
+                @Html.DisplayFor(model => model.DateCreated)
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+    <a class="btn btn-success" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+</div>
